@@ -1,3 +1,5 @@
-import lodash from './index'
+import add from './source/add'
 
-console.log(lodash.chunk([1, 2, 3, 4], 2))
+console.log(add(1, 2))
+
+console.log(add(1)(2), '====')
