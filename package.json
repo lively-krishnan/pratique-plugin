@@ -1,8 +1,23 @@
 {
   "name": "pratique-plugin",
   "version": "1.0.0",
+  "private": true,
   "description": "A library of functions that covers a number of automated instructions.",
   "main": "./dist/index.js",
+  "author": "krishnan",
+  "license": "ISC",
+  "repository": "https://github.com/lively-krishnan/pratique-plugin.git",
+  "lint-staged": {
+    "*.js": "eslint --fix --max-warnings 0"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false,
+    "eslintIntegration": true,
+    "printWidth": 120,
+    "endOfLine": "auto",
+    "ignorePath": ".prettierignore"
+  },
   "scripts": {
     "create": "cross-env --env.custom=create node scripts/bin/new.js",
     "build": "NODE_ENV=production rollup -c",
@@ -17,23 +32,6 @@
     "pub": "sh scripts/release.sh",
     "lint": "eslint packages test"
   },
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
-  "lint-staged": {
-    "*.js": "eslint --fix --max-warnings 0"
-  },
-  "prettier": {
-    "singleQuote": true,
-    "semi": false,
-    "eslintIntegration": true,
-    "printWidth": 120,
-    "endOfLine": "auto",
-    "ignorePath": ".prettierignore"
-  },
-  "author": "xiaojun Geng",
-  "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.16.5",
     "@babel/preset-env": "^7.16.5",
