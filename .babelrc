@@ -1,0 +1,9 @@
+{
+  // babel6.X版本之后， 所有的插件都是可插拔的，也就是说只安装babel依然无法正常的工作，配置对应的.babelrc文件才能起作用
+  // presets: 预设 作用是为babel安装指定的插件 
+  // presets 属性告诉Babel要转换的源码使用了哪些新的语法特性，presets是一组Plugins的集合。
+  "presets": [
+    "@babel/preset-env"
+  ]
+}
+// @babel/preset-env 转译包

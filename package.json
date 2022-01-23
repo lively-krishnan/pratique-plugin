@@ -1,0 +1,70 @@
+{
+  "name": "pratique-plugin",
+  "version": "1.0.0",
+  "description": "A library of functions that covers a number of automated instructions.",
+  "main": "./dist/index.js",
+  "scripts": {
+    "create": "cross-env --env.custom=create node scripts/bin/new.js",
+    "build": "NODE_ENV=production rollup -c",
+    "build:dev": "NODE_ENV=development rollup -c",
+    "build:file": "node scripts/bin/build-entry.js",
+    "clean": "rm -rf dist coverage docs",
+    "test": "jest",
+    "test:serve": "cross-env NODE_ENV=test jest --coverage=true && cross-env --env.custom=SERVER-COVERAGE rollup -c",
+    "test:coverage": "cross-env NODE_ENV=test jest --coverage=true",
+    "docs": "jsDoc -c conf.json && cross-env --env.custom=SERVER-DOCS rollup -c",
+    "submit": "sh scripts/git-submit.sh",
+    "pub": "sh scripts/release.sh",
+    "lint": "eslint packages test"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "lint-staged": {
+    "*.js": "eslint --fix --max-warnings 0"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false,
+    "eslintIntegration": true,
+    "printWidth": 120,
+    "endOfLine": "auto",
+    "ignorePath": ".prettierignore"
+  },
+  "author": "xiaojun Geng",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "@commitlint/cli": "11.0.0",
+    "@commitlint/config-conventional": "11.0.0",
+    "babel-jest": "^27.4.5",
+    "chokidar": "^3.5.2",
+    "colors": "^1.4.2",
+    "commander": "^8.3.0",
+    "confusing-browser-globals": "^1.0.11",
+    "cross-env": "^7.0.3",
+    "eslint": "7.2.0",
+    "eslint-config-airbnb-base": "14.2.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-prettier": "3.1.1",
+    "file-save": "^0.2.0",
+    "husky": "^3.0.0",
+    "inquirer": "^8.2.0",
+    "jest": "^27.4.5",
+    "jsdoc": "^3.6.7",
+    "json-templater": "^1.2.0",
+    "lint-staged": "8.2.1",
+    "prettier": "2.1.2",
+    "rollup": "^2.61.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-cleanup": "^3.2.1",
+    "rollup-plugin-filesize": "^9.1.1",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-serve": "^1.1.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "select-version-cli": "0.0.2"
+  }
+}

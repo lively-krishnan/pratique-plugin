@@ -1,0 +1,32 @@
+{
+    "plugins": [
+        "plugins/markdown"
+    ],
+    "recurseDepth": 10,
+    "opts": {
+        "readme": "./README.md",
+        "package": "./package.json",
+        "encoding": "utf8",
+        "destination": "./docs/",
+        "recurse": true
+    },
+    "source": {
+        "include": [
+            "packages/"
+        ],
+        "exclude": [
+            "packages/shared"
+        ],
+        "includePattern": ".+\\.js(doc|x)?$",
+        "excludePattern": "(^|\\/|\\\\)_"
+    },
+    "sourceType": "module",
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": false,
+        "default": {
+            "includeDate": true,
+            "uselongnameinnav": true
+        }
+    }
+}
